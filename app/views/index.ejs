@@ -5,6 +5,11 @@
 	<title><%= title %></title>
 </head>
 <body>
+	<!-- Display flash messages  -->
+	<% for(var i in messages) { %>
+	   <div class="flash"><%= messages[i] %></div>
+	<% } %>
+	
 	<!-- Render AngularJS views  -->
 	<section ng-view></section>
 
@@ -20,6 +25,11 @@
 	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+	<script type="text/javascript" src="/lib/ng-file-upload/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+	<script type="text/javascript" src="/lib/ng-file-upload/ng-file-upload.js"></script> 
+
+	
 	
 	<!-- Load the articles module -->
 	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
@@ -41,6 +51,13 @@
 	<script type="text/javascript" src="/chat/services/socket.client.service.js"></script>
 	<script type="text/javascript" src="/chat/controllers/chat.client.controller.js"></script>
 	<script type="text/javascript" src="/chat/config/chat.client.routes.js"></script>
+
+
+		<!-- Load the uploads module -->
+	<script type="text/javascript" src="/uploads/uploads.client.module.js"></script>
+	<script type="text/javascript" src="/uploads/controllers/uploads.client.controller.js"></script>
+	<script type="text/javascript" src="/uploads/config/uploads.client.routes.js"></script>
+
 
 	<!-- Bootstrap AngularJS application -->
 	<script type="text/javascript" src="/application.js"></script>

@@ -6,6 +6,8 @@ exports.render = function(req, res) {
 	// Use the 'response' object to render the 'index' view with a 'title' and a stringified 'user' properties
 	res.render('index', {
 		title: 'Hello World',
-		user: JSON.stringify(req.user)
+		user: JSON.stringify(req.user),
+		// Set the flash message variable
+		messages: req.flash('error')
 	});
 };

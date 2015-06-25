@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="/css/common.css">
+	<title>Angular file upload sample</title>
+	<section ng-controller="MyCtrl">
+		  <form name="myForm">
+          <fieldset>
+            <legend>Upload on form submit</legend>
+            Profile Picture: <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" required>
+            <i ng-show="myForm.file.$error.required">*required</i>
+            <br/>
+            <button ng-disabled="!myForm.$valid" ng-click="upload(picFile)">Submit</button>
+            <img ng-show="picFile[0] != null" ngf-src="picFile[0]" class="thumb">
+			<span class="progress" ng-show="picFile[0].progress >= 0">
+				<div style="width:{{picFile[0].progress}}%" ng-bind="picFile[0].progress + '%'"></div>
+			</span>
+            <span ng-show="picFile[0].result">Upload Successful</span>
+          </fieldset>
+          <br/>
+        </form>
+	</section>
+</body>
+</html>

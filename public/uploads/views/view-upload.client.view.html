@@ -1,0 +1,10 @@
+
+<!-- The article view -->
+<section data-ng-controller="MyCtrl" >
+	userId: <h1 data-ng-bind="authentication.user._id"></h1>
+	username:<h1 data-ng-bind="authentication.user.username"></h1>
+	email:<h1 data-ng-bind="authentication.user.email"></h1>
+	profileUrl:<h1 data-ng-bind="authentication.user.profileUrl"></h1>
+	profile image:<img ng-src="{{image}}"/>
+
+</section>

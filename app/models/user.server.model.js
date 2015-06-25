@@ -48,6 +48,10 @@ var UserSchema = new Schema({
 		type: Date,
 		// Create a default 'created' value
 		default: Date.now
+	},
+	profileUrl: {
+		type: String,
+		default: 'http://res.cloudinary.com/dqevqceyc/image/upload/w_100,h_100,c_thumb,g_face,r_25/noProfile_p8w4ge.jpg'
 	}
 });
 
