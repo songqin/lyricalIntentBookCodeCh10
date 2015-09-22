@@ -97,6 +97,7 @@ module.exports = function(db) {
 	// var uploads = require('../app/controllers/uploads.server.controller');
 	var User = require('mongoose').model('User');
   	var rand = Math.random();
+	//https://github.com/expressjs/multer
 	app.use(multer({
 	    // ************enable this one for Development***********
 	    dest: './client/assets/images/uploads/',
@@ -105,10 +106,10 @@ module.exports = function(db) {
 	      return filename+"-"+rand;
 	     },
 	    limits: {
-	      fieldNameSize: 100,
-	      files: 20,
-	      fields: 5,
-	      fileSize: 500000//500kB
+	      fieldNameSize: 100,//Max field name size
+	      files: 20,//For multipart forms, the max number of file fields	
+	      fields: 5,//Max number of non-file fields
+	      fileSize: 500000//500kB: For multipart forms, the max file size (in bytes)	
 	     },
 	    onFileUploadStart: function (file) {
 	      console.log(file.originalname + ' is starting ...');

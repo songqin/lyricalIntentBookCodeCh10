@@ -19,7 +19,7 @@ var UserSchema = new Schema({
 		type: String,
 		// Set a unique 'username' index
 		unique: true,
-		// Validate 'username' value existance
+		// Validate 'username' v alue existance
 		required: 'Username is required',
 		// Trim the 'username' field
 		trim: true
